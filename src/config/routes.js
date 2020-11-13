@@ -9,6 +9,7 @@ import { NuevoProducto } from '../components/admin/NuevoProducto';
 import { IniciaSesion } from '../components/usuario/IniciaSesion';
 import { Registrate } from '../components/usuario/Registrate';
 import Layout from '../components/Layout';
+import LayoutSesion from '../components/LayoutSesion';
 import { Error404 } from '../components/Error404';
 const routes =[
     {
@@ -58,7 +59,7 @@ const routes =[
     },
     {
         path: "/",
-        component: Layout,
+        component: LayoutSesion ,
         exact: false,
         routes: [
             
