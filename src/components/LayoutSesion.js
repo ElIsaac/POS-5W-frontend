@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
-import { Layout, Menu } from 'antd';
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
+import React from 'react'
+import { Layout } from 'antd';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content } = Layout;
 
 
 export default function LayoutBasic(props) {
 
-    const { routes } = props;
+    const { children } = props;
 
 
         return (
@@ -21,29 +20,11 @@ export default function LayoutBasic(props) {
                     <Content style={{ margin: '0 16px' }}>
 
                         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                            <LoadRoutes routes={routes} />
+                            {children}
                         </div>
                     </Content>
                 </Layout>
             </Layout>
         )
 
-}
-
-function LoadRoutes(props) {
-    const { routes } = props;
-    return (
-        <Switch>
-            {
-                routes.map((route, index) => (
-                    <Route
-                        key={index}
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.component}
-                    />
-                ))
-            }
-        </Switch>
-    )
 }

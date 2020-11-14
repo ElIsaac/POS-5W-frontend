@@ -1,4 +1,7 @@
 import { types } from "../types/types";
+import {cerrarSesion} from '../api/auth'
+
+
 
 export const authReducer = (state = {}, action) =>{
 
@@ -10,6 +13,7 @@ export const authReducer = (state = {}, action) =>{
             }
 
             case types.logout:
+                cerrarSesion()
                 return {
                     logged: false
                 }

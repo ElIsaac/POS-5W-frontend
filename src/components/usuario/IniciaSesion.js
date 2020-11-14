@@ -25,15 +25,13 @@ export const IniciaSesion = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        dispatch({
-            type: types.login
-        })
+        
         
 
         const result = await iniciaSesion(formValues)
-          if(result.mensaje){
+          if(result.error){
             notification["error"]({
-                message: result.mensaje
+                message: result.error
             })
         }else{
             const{ AccessToken, RefreshToken }= result;
@@ -43,7 +41,10 @@ export const IniciaSesion = () => {
             notification["success"]({
                 message: "Inicio de sesion correcto"
             })
-            window.location.href="/admin"
+            dispatch({
+                type: types.login
+            })
+            window.location.href="/cajero/inicio"
         }  
         console.log(result); 
     }

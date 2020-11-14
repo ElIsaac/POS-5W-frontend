@@ -1,9 +1,12 @@
 import React from 'react'
+import Titulo from '../Titulo'
 
-export const AdminInicio = () => {
+export const AdminInicio = (props) => {
+    
     return (
-        <div>
+        <>
+            < Titulo titulo="Inicio Admin" history={props.history}/>
             AdminInicio
-        </div>
+        </>
     )
 }

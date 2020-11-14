@@ -1,13 +1,27 @@
 import React, { useReducer } from 'react';
-import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import jwtDecode from 'jwt-decode';
+
+import LayoutSesion from './components/LayoutSesion'
+import Layout from './components/Layout'
+
 import { AuthContext } from './auth/AuthContext';
+import { PrivateRoute } from './routers/PrivateRoute';
+import { PublicRoute } from './routers/PublicRoute';
+
+import { CajeroInicio } from './components/cajero/CajeroInicio';
+import { Cobrar } from './components/cajero/Cobrar';
+
+import { AdminInicio } from './components/admin/AdminInicio';
+import { Productos } from './components/admin/Productos';
+import { NuevoProducto } from './components/admin/NuevoProducto';
+
+import { IniciaSesion } from './components/usuario/IniciaSesion';
+import { Registrate } from './components/usuario/Registrate';
+
 import { authReducer } from './auth/authReducer';
-
-//import AuthProvider from './providers/AuthProvider'
-
-import routes from './config/routes'
-
+import { Error404 } from './components/Error404'
+import Presentacion from './components/usuario/Presentacion';
 
 
 function App() {
@@ -29,19 +43,27 @@ function App() {
     }
   }
 
-  const [user, dispatch] = useReducer(authReducer, {}, init)
+  const [user, dispatch] = useReducer(authReducer , {}, init)
 
   return (
     <AuthContext.Provider value={{user, dispatch}} >
        <Router>
-        <Switch>
-          {routes.map((route, index) => (
-            <RouteWithSubRoutes key={index} {...route} />
-          ))
-          
-          }
-        </Switch>
-      </Router>
+                <Switch> 
+                <PublicRoute exact path="/" isAuthenticated={ user.logged } component={Presentacion} layout={LayoutSesion} />
+                <PublicRoute exact path="/inicia-sesion" isAuthenticated={ user.logged } component={IniciaSesion} layout={LayoutSesion} />
+                <PublicRoute exact path="/registrate" isAuthenticated={ user.logged } component={Registrate} layout={LayoutSesion}/>
+
+                <PrivateRoute exact path="/cajero/inicio" isAuthenticated={ user.logged } isAdmin={user.admin} component={CajeroInicio} layout={Layout} />
+                <PrivateRoute exact path="/cajero/cobrar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Cobrar} layout={Layout} />
+
+                <PrivateRoute exact path="/cajero/admin" isAuthenticated={ user.logged } isAdmin={user.admin} component={AdminInicio} layout={Layout} />
+                <PrivateRoute exact path="/cajero/admin/productos" isAuthenticated={ user.logged } isAdmin={user.admin} component={Productos} layout={Layout} />
+                <PrivateRoute exact path="/cajero/admin/productos/nuevo" isAuthenticated={ user.logged } isAdmin={user.admin} component={NuevoProducto} layout={Layout} />
+
+                <Route component={Error404} />
+                
+                </Switch>
+        </Router>
 
     </AuthContext.Provider>
      
@@ -50,22 +72,5 @@ function App() {
 
   );
 }
-
-
-
-
-function RouteWithSubRoutes(route){
-return (
-  <Route
-  path={route.path}
-  exact={route.exact}
-  render={props => <route.component routes={route.routes} {...props}/>}
-  
-  />
-);
-}
-
-
-
 
 export default App;
