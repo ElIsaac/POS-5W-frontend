@@ -18,7 +18,7 @@ export const PrivateRoute = ({
             component={ (props) => (
                 ( isAuthenticated )
                     ? ( <Layout isAdmin={isAdmin}><Component { ...props } /></Layout> )
-                    : ( <Redirect to="/inicia-sesion" /> )
+                    : ( <Redirect to="/" /> )
             )}
         
         />
