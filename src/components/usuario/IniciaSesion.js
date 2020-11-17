@@ -9,7 +9,7 @@ import { iniciaSesion } from '../../api/auth'
 
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../utils/constants'
 
-export const IniciaSesion = () => {
+export const IniciaSesion = ({e}) => {
 
     const { dispatch } = useContext(AuthContext)
    
