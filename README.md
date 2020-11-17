@@ -9,7 +9,7 @@
 Un sistema de registro de ventas para pequeñas tiendas y locales la cual puede ser local u online
 todo utlizando el stack mern
 
-#Opciones de deploy con create-react-app
+# Opciones de deploy con create-react-app
 
 ## Available Scripts
 
