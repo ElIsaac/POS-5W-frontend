@@ -14,7 +14,7 @@ export default function Titulo({titulo, subtitulo, history}) {
         dispatch({
             type: types.logout
         })
-        history.replace("/inicia-sesion")
+        history.replace("/")
     }
 
     

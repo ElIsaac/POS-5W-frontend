@@ -8,23 +8,14 @@ export default function registrate(datos){
         headers: {
             "Content-Type": "application/json"
         }
-    }).then(res => {
-        return res.json();
+    }).then(response => {
+        return response.json();
+
     } ).then(result =>{
-        if(result.mensaje==='usuario guardado'){
-            return {
-                ok: true,
-                mensaje: result
-            }
-        }
-        return {
-            ok: false,
-            mensaje: result
-        }
+        return result;
+        
     }).catch((err)=>{
-        return {
-            ok: false,
-            mensaje: err
-        }
-    });
+
+        return err
+        })
 }

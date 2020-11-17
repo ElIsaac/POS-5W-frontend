@@ -1,7 +1,7 @@
 import './Layout.css'
 import React, { useState } from 'react'
 import { Layout, Menu } from 'antd';
-import { HomeOutlined, UnorderedListOutlined, PlusOutlined } from '@ant-design/icons';
+import { HomeOutlined, UnorderedListOutlined, PlusOutlined, UserAddOutlined, DollarCircleOutlined, IdcardOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom'
 //import useAuth from '../hooks/useAuth'
 
@@ -25,19 +25,19 @@ export default function LayoutBasic(props) {
 
                     <Menu.Item key="/cajero/inicio" icon={<HomeOutlined />}>
                         <Link to={"/cajero/inicio"}>
-                            Cajero - inicio 
+                            Inicio 
                             </Link>
                     </Menu.Item>
 
-                    <Menu.Item key="/cajero/cobrar" icon={<HomeOutlined />}>
+                    <Menu.Item key="/cajero/cobrar" icon={<DollarCircleOutlined />}>
                         <Link to={"/cajero/cobrar"}>
-                            Cajero - cobrar 
+                            Cobrar 
                             </Link>
                     </Menu.Item>
 
                     {isAdmin &&
                     <>
-                        <Menu.Item key="/cajero/admin" icon={<HomeOutlined />}>
+                        <Menu.Item key="/cajero/admin" icon={<IdcardOutlined />}>
                             <Link to={"/cajero/admin"}>
                                 Administrador 
                                 </Link>
@@ -45,13 +45,19 @@ export default function LayoutBasic(props) {
 
                         <Menu.Item key="/cajero/admin/productos" icon={<UnorderedListOutlined />}>
                             <Link to={"/cajero/admin/productos"}>
-                                Administrador - productos
+                                Todos los productos
                                 </Link>
                         </Menu.Item>
 
                         <Menu.Item key="/cajero/admin/productos/nuevo" icon={<PlusOutlined />}>
                             <Link to={"/cajero/admin/productos/nuevo"}>
-                                Administrador - nuevo
+                                Nuevo producto
+                                </Link>
+                        </Menu.Item>
+
+                        <Menu.Item key="/cajero/admin/registrate" icon={<UserAddOutlined />}>
+                            <Link to={"/cajero/admin/registrate"}>
+                                Registrar
                                 </Link>
                         </Menu.Item>
                     </>
