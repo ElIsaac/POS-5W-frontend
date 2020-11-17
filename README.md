@@ -1,6 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Point of sales 5w
+### `yarn start`
+### `yarn start`
+### `yarn start`
+### `yarn start`
+### `yarn start`
 
 ## Available Scripts
 
