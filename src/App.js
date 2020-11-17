@@ -17,7 +17,7 @@ import { Productos } from './components/admin/Productos';
 import { NuevoProducto } from './components/admin/NuevoProducto';
 
 import { IniciaSesion } from './components/usuario/IniciaSesion';
-import { Registrate } from './components/usuario/Registrate';
+import { Registrate } from './components/admin/Registrate';
 
 import { authReducer } from './auth/authReducer';
 import { Error404 } from './components/Error404'
@@ -51,12 +51,13 @@ function App() {
                 <Switch> 
                 <PublicRoute exact path="/" isAuthenticated={ user.logged } component={Presentacion} layout={LayoutSesion} />
                 <PublicRoute exact path="/inicia-sesion" isAuthenticated={ user.logged } component={IniciaSesion} layout={LayoutSesion} />
-                <PublicRoute exact path="/registrate" isAuthenticated={ user.logged } component={Registrate} layout={LayoutSesion}/>
+                
 
                 <PrivateRoute exact path="/cajero/inicio" isAuthenticated={ user.logged } isAdmin={user.admin} component={CajeroInicio} layout={Layout} />
                 <PrivateRoute exact path="/cajero/cobrar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Cobrar} layout={Layout} />
 
                 <PrivateRoute exact path="/cajero/admin" isAuthenticated={ user.logged } isAdmin={user.admin} component={AdminInicio} layout={Layout} />
+                <PrivateRoute exact path="/cajero/admin/registrate" isAuthenticated={ user.logged } isAdmin={user.admin} component={Registrate} layout={Layout}/>
                 <PrivateRoute exact path="/cajero/admin/productos" isAuthenticated={ user.logged } isAdmin={user.admin} component={Productos} layout={Layout} />
                 <PrivateRoute exact path="/cajero/admin/productos/nuevo" isAuthenticated={ user.logged } isAdmin={user.admin} component={NuevoProducto} layout={Layout} />
 
