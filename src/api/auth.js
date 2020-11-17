@@ -44,12 +44,11 @@ export function iniciaSesion(datos){
         return response.json();
 
     } ).then(result =>{
-        console.log(result)
         return result;
         
     }).catch((err)=>{
 
-        return err.mensaje
+        return err
         })
 }
 
