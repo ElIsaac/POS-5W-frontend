@@ -7,7 +7,7 @@ import { useForm } from '../../hooks/useForm';
 import { types } from '../../types/types';
 import { iniciaSesion } from '../../api/auth'
 
-import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../utils/constants'
+import { ACCESS_TOKEN } from '../../utils/constants'
 
 export const IniciaSesion = ({e}) => {
 
@@ -34,9 +34,8 @@ export const IniciaSesion = ({e}) => {
                 message: result.error
             })
         }else{
-            const{ AccessToken, RefreshToken }= result;
+            const{ AccessToken }= result;
             localStorage.setItem(ACCESS_TOKEN, AccessToken);
-            localStorage.setItem(REFRESH_TOKEN, RefreshToken);
 
             notification["success"]({
                 message: "Inicio de sesion correcto"

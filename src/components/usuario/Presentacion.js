@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
-import { Drawer, Form, Button, } from 'antd';
+import React from 'react'
 import { IniciaSesion } from '../usuario/IniciaSesion'
-import { Registrate } from '../admin/Registrate'
 
 export default function Presentacion() {
-    const [inicio, setInicio] = useState(true)
 
     return (
         <div>

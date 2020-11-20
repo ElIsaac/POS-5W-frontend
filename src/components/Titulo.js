@@ -7,7 +7,7 @@ import {types} from '../types/types'
 
 export default function Titulo({titulo, subtitulo, history}) {
 
-    const {usuario, dispatch} = useContext(AuthContext)
+    const { dispatch } = useContext(AuthContext)
 
 
     const cerrarSesion=()=>{
