@@ -22,12 +22,14 @@ import { Registrate } from './components/admin/Registrate';
 import { authReducer } from './auth/authReducer';
 import { Error404 } from './components/Error404'
 import Presentacion from './components/usuario/Presentacion';
+import { obtenerToken } from './api/auth';
 
 
 function App() {
 
+
   const init = () =>{
-    const token=localStorage.getItem("accessToken")
+    const token = obtenerToken()
     var data
     if(token){
       data=jwtDecode(token)
