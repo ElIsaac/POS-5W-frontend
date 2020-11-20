@@ -109,7 +109,7 @@ function PantallaCobrar({ columns, productoEnLista, onSearch, productosID, setPr
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-        saveAs(pdfBlob, 'newPdf.pdf');
+        saveAs(pdfBlob, 'ticket.pdf');
         setProductoEnLista([])
         setProductosID([])
       }).catch(err => console.log(err))
