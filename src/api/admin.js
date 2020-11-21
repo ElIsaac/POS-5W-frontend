@@ -18,8 +18,8 @@ export function traerProductos(token){
     });
 }
 
-export function traerUnProductos(token,productoId){
-    return fetch(`http://${config.nombre}/admin/productos/${productoId}`, {
+export function traerUnProducto(token,productoId){
+    return fetch(`http://${config.nombre}/productos/${productoId}`, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json",
