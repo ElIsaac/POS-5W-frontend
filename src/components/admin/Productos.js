@@ -3,9 +3,11 @@ import { borrarProducto, traerUnProducto, editarProducto } from '../../api/admin
 import { obtenerToken } from '../../api/auth'
 import Titulo from '../Titulo'
 import { notification } from 'antd';
-
+import Confirmacion from '../Confirmacion'
 
 import { useForm } from '../../hooks/useForm';
+
+
 
 export const Productos = (props) => {
 
@@ -78,6 +80,7 @@ export const Productos = (props) => {
         }
     }
 
+    
 
     return (
         <div>
@@ -99,7 +102,7 @@ export const Productos = (props) => {
             </form>
             <br/>
 
-            {formValues.nombre 
+            {formValues.nombre || formValues.precio
                 ?
                 <div className="card">
                     <div className="card-header">
@@ -129,11 +132,13 @@ export const Productos = (props) => {
                                     onChange={handleInputChange}
                                 />
                             </div>
+                            
                         </form>
                         <button 
                         type="button" 
                         className="btn btn-block btn-success"
-                        onClick={() => editar(id, formValues)}
+                        
+                        onClick={() => Confirmacion("Esta seguro de que quiere editar este producto", editar, id, formValues)}
                         >
                             Actualizar
                         </button>
@@ -141,7 +146,7 @@ export const Productos = (props) => {
                         <button 
                         type="button" 
                         className="btn btn-block btn-danger"
-                        onClick={() => borrar(id)}
+                        onClick={() => Confirmacion("Esta a punto de eliminar este producto, desea continuar?", borrar, id)}
                         >
                             Eliminar
                         </button>
