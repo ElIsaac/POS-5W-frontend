@@ -7,6 +7,8 @@ import { buscarProductos } from '../../api/cajero';
 import { obtenerToken } from '../../api/auth';
 
 import Titulo from '../Titulo';
+
+
 const token = obtenerToken();
 
 export const Cobrar = (props) => {
@@ -19,7 +21,17 @@ export const Cobrar = (props) => {
   useEffect(() => {
 
     buscarProductos(token).then(res => {
-      setProductos(res)
+      const arr=[]
+      res.map(i=>{
+        arr.push({
+          _id: i._id,
+          key: i._id,
+          nombre: i.nombre,
+          precio:i.precio
+        })
+        return null;
+      })
+      setProductos(arr)
     })
   }, [])
 
@@ -130,7 +142,7 @@ function PantallaCobrar({ columns, productoEnLista, onSearch, productosID, setPr
       />
       <button
         type="button"
-        class="btn btn-success"
+        className="btn btn-success"
         onClick={() => cobrarProductos(productosID)}
       >
         Cobrar productos
