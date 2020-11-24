@@ -24,10 +24,6 @@ export const IniciaSesion = ({e}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        
-        
-
         const result = await iniciaSesion(formValues)
           if(result.error){
             notification["error"]({
@@ -35,7 +31,8 @@ export const IniciaSesion = ({e}) => {
             })
         }else{
             const{ AccessToken }= result;
-            localStorage.setItem(ACCESS_TOKEN, AccessToken);
+            if(AccessToken){
+                localStorage.setItem(ACCESS_TOKEN, AccessToken);
 
             notification["success"]({
                 message: "Inicio de sesion correcto"
@@ -44,8 +41,12 @@ export const IniciaSesion = ({e}) => {
                 type: types.login
             })
             window.location.href="/cajero/inicio"
-        }  
-        console.log(result); 
+            }else{
+                notification["error"]({
+                    message: "Error al establecer coneccion al servidor"
+                })
+            }
+        }
     }
 
 

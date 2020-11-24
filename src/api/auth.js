@@ -37,7 +37,7 @@ export  function obtenerToken(){
         cerrarSesion()
         return null;
     }
-    if(decodificar(accessToken)){
+    if(tokenInvalido(accessToken)){
         cerrarSesion()
         return null
     }else{
@@ -47,10 +47,14 @@ export  function obtenerToken(){
 
 
 
-function decodificar(token){
-    const segundos = 60;
-    const rawToken=jwtDecode(token);
-    const {fechaExpiracion}=rawToken;
-    const now = (Date.now() + segundos)/1000
-    return now > fechaExpiracion;
+function tokenInvalido(token){
+    try{
+        const segundos = 60;
+        const rawToken=jwtDecode(token);
+        const {fechaExpiracion}=rawToken;
+        const now = (Date.now() + segundos)/1000
+        return now > fechaExpiracion;
+    }catch{
+        return true
+    }
 }
