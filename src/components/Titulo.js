@@ -26,6 +26,7 @@ export default function Titulo({titulo, subtitulo, history}) {
                     subTitle={subtitulo}
                     extra={[
                         <Button
+                            key="1"
                             type="primary"
                             danger
                             onClick={() => cerrarSesion()}
