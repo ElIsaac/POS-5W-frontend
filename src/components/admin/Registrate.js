@@ -56,11 +56,11 @@ export const Registrate = (props) => {
         <br/>
         
             <form onSubmit={ handleSubmit }>
-            <div class="card">
-                <div class="card-header">
-                <h5 class="card-title">Registrate</h5>
+            <div className="card">
+                <div className="card-header">
+                <h5 className="card-title">Registrate</h5>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                     
                         <div className="form-group">
                         <input 
