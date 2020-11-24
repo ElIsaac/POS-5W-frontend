@@ -13,7 +13,7 @@ export default function LayoutBasic(props) {
 
     const { children, isAdmin } = props;
 
-    const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(true)
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -73,7 +73,7 @@ export default function LayoutBasic(props) {
                          {children}
                     </div>
                 </Content>
-                <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+                <Footer style={{ textAlign: 'center' }}>Tienda de lolo</Footer>
             </Layout>
         </Layout>
     )
