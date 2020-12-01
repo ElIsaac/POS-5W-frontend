@@ -40,11 +40,11 @@ export const NuevoProducto = (props) => {
             < Titulo titulo="Agregar productos" history={props.history}/>
             <br/>
             <form onSubmit={handleSubmit}>
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Agregar</h5>
+                <div className="card">
+                    <div className="card-header">
+                        <h5 className="card-title">Agregar</h5>
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
 
                         <div className="form-group">
                             <input
