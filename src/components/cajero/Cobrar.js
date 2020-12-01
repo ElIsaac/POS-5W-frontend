@@ -4,8 +4,9 @@ import { saveAs } from 'file-saver'
 import axios from 'axios';
 
 import { buscarProductos } from '../../api/cajero';
-import { obtenerToken } from '../../api/auth';
+import { obtenerToken, cerrarSesion } from '../../api/auth';
 
+import Confirmacion from '../Confirmacion'
 import Titulo from '../Titulo';
 
 
@@ -19,19 +20,28 @@ export const Cobrar = (props) => {
 
 
   useEffect(() => {
+    
 
     buscarProductos(token).then(res => {
-      const arr=[]
-      res.map(i=>{
+      console.log("paso aqui")
+      try {
+        const arr=[]
+      res.map((i)=>{
         arr.push({
           _id: i._id,
-          key: i._id,
           nombre: i.nombre,
-          precio:i.precio
+          precio:i.precio,
+          key:i._id
         })
         return null;
       })
       setProductos(arr)
+      } catch {
+        
+        cerrarSesion()
+        window.location.reload(true);
+        
+      }
     })
   }, [])
 
@@ -47,7 +57,13 @@ export const Cobrar = (props) => {
     if (resultado) {
       setProductoEnLista([
         ...productoEnLista,
-        resultado
+        
+        {key: new Date(),
+        nombre: resultado.nombre,
+        precio: resultado.precio,
+        _id: resultado._id}
+       
+        
       ])
       setProductosID([
         ...productosID,
@@ -143,7 +159,7 @@ function PantallaCobrar({ columns, productoEnLista, onSearch, productosID, setPr
       <button
         type="button"
         className="btn btn-success"
-        onClick={() => cobrarProductos(productosID)}
+        onClick={() => Confirmacion("Desea cobrar estos productos",cobrarProductos,productosID,)}
       >
         Cobrar productos
       </button>
