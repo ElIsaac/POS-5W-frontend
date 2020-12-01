@@ -21,7 +21,7 @@ export function buscarProducto(token, id){
 
 
 export function buscarProductos(token, id){
-    return fetch(`http://${config.nombre}/productos/`, {
+    return fetch(`http://${config.nombre}/productos/todos/`, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json",
