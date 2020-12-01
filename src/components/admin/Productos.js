@@ -61,22 +61,33 @@ export const Productos = (props) => {
     const buscar = async (id) => {
         const token = obtenerToken()
         const prod = await traerUnProducto(token, id)
+        console.log(prod)
         if (prod.error) {
             notification["error"]({
                 message: prod.error
             })
         } else {
-            notification["success"]({
-                message: "producto encontrado"
-            })
-            setProductoOriginal(prod)
-            setValues({
-                id: prod._id,
-                nombre: prod.nombre,
-                precio: prod.precio
-            })
+            if(prod._id!==undefined){
+                notification["success"]({
+                    message: "producto encontrado"
+                })
+                setProductoOriginal(prod)
+                setValues({
+                    id: prod._id,
+                    nombre: prod.nombre,
+                    precio: prod.precio
+                })
+            }else{
+                notification["error"]({
+                    message: "Porfavor llene los campos"
+                })
+                setValues({
+                    id: '',
+                    nombre: '',
+                    precio: ''
+                })
+            }
             
-            console.log(formValues)
         }
     }
 
