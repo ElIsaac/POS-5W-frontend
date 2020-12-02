@@ -9,11 +9,9 @@ const { Content, Footer, Sider } = Layout;
 
 
 export default function LayoutBasic(props) {
-
-
-    const { children, isAdmin } = props;
-
+    
     const [collapsed, setCollapsed] = useState(true)
+    const { children, isAdmin } = props;
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -21,7 +19,7 @@ export default function LayoutBasic(props) {
                 <div className="logo">
 
                 </div>
-                <Menu theme="dark" mode="inline">
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={window.location.pathname}>
 
                     <Menu.Item key="/cajero/inicio" icon={<HomeOutlined />}>
                         <Link to={"/cajero/inicio"}>
@@ -37,26 +35,26 @@ export default function LayoutBasic(props) {
 
                     {isAdmin &&
                     <>
-                        <Menu.Item key="/cajero/admin" icon={<IdcardOutlined />}>
-                            <Link to={"/cajero/admin"}>
+                        <Menu.Item key="/cajero/administrador" icon={<IdcardOutlined />}>
+                            <Link to={"/cajero/administrador"}>
                                 Administrador 
                                 </Link>
                         </Menu.Item>
 
-                        <Menu.Item key="/cajero/admin/productos" icon={<UnorderedListOutlined />}>
-                            <Link to={"/cajero/admin/productos"}>
+                        <Menu.Item key="/cajero/admin-editar" icon={<UnorderedListOutlined />}>
+                            <Link to={"/cajero/admin-editar"}>
                                 Todos los productos
                                 </Link>
                         </Menu.Item>
 
-                        <Menu.Item key="/cajero/admin/productos/nuevo" icon={<PlusOutlined />}>
-                            <Link to={"/cajero/admin/productos/nuevo"}>
+                        <Menu.Item key="/cajero/admin-productos-nuevo" icon={<PlusOutlined />}>
+                            <Link to={"/cajero/admin-productos-nuevo"}>
                                 Nuevo producto
                                 </Link>
                         </Menu.Item>
 
-                        <Menu.Item key="/cajero/admin/registrate" icon={<UserAddOutlined />}>
-                            <Link to={"/cajero/admin/registrate"}>
+                        <Menu.Item key="/cajero/admin-registrar" icon={<UserAddOutlined />}>
+                            <Link to={"/cajero/admin-registrar"}>
                                 Registrar
                                 </Link>
                         </Menu.Item>

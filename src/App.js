@@ -6,6 +6,7 @@ import LayoutSesion from './components/LayoutSesion'
 import Layout from './components/Layout'
 
 import { AuthContext } from './auth/AuthContext';
+import { AdminRoute } from './routers/AdminRoute';
 import { PrivateRoute } from './routers/PrivateRoute';
 import { PublicRoute } from './routers/PublicRoute';
 
@@ -57,11 +58,11 @@ function App() {
 
                 <PrivateRoute exact path="/cajero/inicio" isAuthenticated={ user.logged } isAdmin={user.admin} component={CajeroInicio} layout={Layout} />
                 <PrivateRoute exact path="/cajero/cobrar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Cobrar} layout={Layout} />
-
-                <PrivateRoute exact path="/cajero/admin" isAuthenticated={ user.logged } isAdmin={user.admin} component={AdminInicio} layout={Layout} />
-                <PrivateRoute exact path="/cajero/admin/registrate" isAuthenticated={ user.logged } isAdmin={user.admin} component={Registrate} layout={Layout}/>
-                <PrivateRoute exact path="/cajero/admin/productos" isAuthenticated={ user.logged } isAdmin={user.admin} component={Productos} layout={Layout} />
-                <PrivateRoute exact path="/cajero/admin/productos/nuevo" isAuthenticated={ user.logged } isAdmin={user.admin} component={NuevoProducto} layout={Layout} />
+                
+                <AdminRoute exact path="/cajero/administrador" isAuthenticated={ user.logged } isAdmin={user.admin} component={AdminInicio} layout={Layout} />
+                <AdminRoute exact path="/cajero/admin-registrar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Registrate} layout={Layout}/>
+                <AdminRoute exact path="/cajero/admin-editar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Productos} layout={Layout} />
+                <AdminRoute exact path="/cajero/admin-productos-nuevo" isAuthenticated={ user.logged } isAdmin={user.admin} component={NuevoProducto} layout={Layout} />
 
                 <Route component={Error404} />
                 
