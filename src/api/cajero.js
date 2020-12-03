@@ -36,3 +36,20 @@ export function buscarProductos(token, id){
         
     });
 }
+
+export function traerMisTickets(token, idCajero){
+    return fetch(`http://${config.nombre}/ticket/todos/${idCajero}`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: token
+        }
+    }).then(response => {
+        return response.json();
+    } ).then(result =>{
+        return result
+    }).catch((err)=>{
+        return  err
+        
+    });
+}
