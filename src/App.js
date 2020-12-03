@@ -56,13 +56,13 @@ function App() {
                 <PublicRoute exact path="/inicia-sesion" isAuthenticated={ user.logged } component={IniciaSesion} layout={LayoutSesion} />
                 
 
-                <PrivateRoute exact path="/cajero/inicio" isAuthenticated={ user.logged } isAdmin={user.admin} component={CajeroInicio} layout={Layout} />
-                <PrivateRoute exact path="/cajero/cobrar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Cobrar} layout={Layout} />
+                <PrivateRoute exact path="/cajero/inicio" user={user} component={CajeroInicio} layout={Layout} />
+                <PrivateRoute exact path="/cajero/cobrar" user={user} component={Cobrar} layout={Layout} />
                 
-                <AdminRoute exact path="/cajero/administrador" isAuthenticated={ user.logged } isAdmin={user.admin} component={AdminInicio} layout={Layout} />
-                <AdminRoute exact path="/cajero/admin-registrar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Registrate} layout={Layout}/>
-                <AdminRoute exact path="/cajero/admin-editar" isAuthenticated={ user.logged } isAdmin={user.admin} component={Productos} layout={Layout} />
-                <AdminRoute exact path="/cajero/admin-productos-nuevo" isAuthenticated={ user.logged } isAdmin={user.admin} component={NuevoProducto} layout={Layout} />
+                <AdminRoute exact path="/cajero/administrador" user={user}  component={AdminInicio} layout={Layout} />
+                <AdminRoute exact path="/cajero/admin-registrar" user={user}  component={Registrate} layout={Layout}/>
+                <AdminRoute exact path="/cajero/admin-editar" user={user}  component={Productos} layout={Layout} />
+                <AdminRoute exact path="/cajero/admin-productos-nuevo" user={user} component={NuevoProducto} layout={Layout} />
 
                 <Route component={Error404} />
                 

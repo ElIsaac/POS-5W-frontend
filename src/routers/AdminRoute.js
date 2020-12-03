@@ -5,19 +5,17 @@ import { Route, Redirect } from 'react-router-dom';
 
 
 export const AdminRoute = ({
-    isAuthenticated,
-    isAdmin,
+    user,
     component: Component,
     layout: Layout, 
     ...rest
 }) => {
     
-
     return (
         <Route { ...rest }
             component={ (props) => (
-                ( isAdmin && isAuthenticated )
-                    ? ( <Layout isAdmin={isAdmin}><Component { ...props } /></Layout> )
+                ( user.logged && user.admin )
+                    ? ( <Layout isAdmin={user.admin}><Component { ...props } /></Layout> )
                     : ( <Redirect to="/cajero/inicio" /> )
             )}
         
@@ -26,6 +24,6 @@ export const AdminRoute = ({
 }
 
 AdminRoute.propTypes = {
-    isAuthenticated: PropTypes.bool.isRequired,
+    user: PropTypes.object.isRequired,
     component: PropTypes.func.isRequired
 }
