@@ -3,6 +3,8 @@ import { Modal, Switch, notification } from 'antd'
 
 import Titulo from '../Titulo'
 import { PantallaDeCarga } from '../PantallaDeCarga'
+import Confirmacion from '../Confirmacion'
+
 import { traerUsuarios, editarUsuario, eliminarUsuario } from '../../api/admin'
 import { obtenerToken } from '../../api/auth'
 
@@ -185,10 +187,11 @@ function CardUsuario({usuarios, cambio, setCambio}) {
                     >
                         Editar
                 </button>
+                
                     <button
                         type="button"
                         className="btn btn-danger btn-block"
-                        onClick={()=>eliminar(usuarios._id)}
+                        onClick={()=>Confirmacion("Desea eliminar este usuario", eliminar, usuarios._id)}
                     >
                         Eliminar
                 </button>
