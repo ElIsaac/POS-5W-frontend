@@ -73,3 +73,55 @@ export function editarProducto(token, datos, productoId){
         
     });
 }
+
+export function editarUsuario(token, datos, usuarioID){
+    return fetch(`http://${config.nombre}/admin/usuarios/${usuarioID}`, {
+        method: 'PUT',
+        body: JSON.stringify(datos),
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: token
+        }
+    }).then(response => {
+        return response.json();
+    } ).then(result =>{
+        return result
+    }).catch((err)=>{
+        return  err
+        
+    });
+}
+
+export function eliminarUsuario(token, usuarioID){
+    return fetch(`http://${config.nombre}/admin/usuarios/${usuarioID}`, {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: token
+        }
+    }).then(response => {
+        return response.json();
+    } ).then(result =>{
+        return result
+    }).catch((err)=>{
+        return  err
+        
+    });
+}
+
+export function traerUsuarios(token){
+    return fetch(`http://${config.nombre}/admin/usuarios`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: token
+        }
+    }).then(response => {
+        return response.json();
+    } ).then(result =>{
+        return result
+    }).catch((err)=>{
+        return  err
+        
+    });
+}
