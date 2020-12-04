@@ -3,6 +3,7 @@ import { Table, Input, notification } from 'antd';
 import { saveAs } from 'file-saver'
 import axios from 'axios';
 
+import config from '../../api/config'
 import { buscarProductos } from '../../api/cajero';
 import { obtenerToken, cerrarSesion } from '../../api/auth';
 
@@ -23,7 +24,6 @@ export const Cobrar = (props) => {
     
 
     buscarProductos(token).then(res => {
-      console.log("paso aqui")
       try {
         const arr=[]
       res.map((i)=>{
@@ -125,7 +125,7 @@ function PantallaCobrar({ columns, productoEnLista, onSearch, productosID, setPr
   const cobrarProductos = async (productosID) => {
 
     const cuerpo={ "productos": productosID }
-    const config={
+    const configurar={
       headers: {
         "Content-Type": "application/json",
         "Authorization": token
@@ -133,7 +133,7 @@ function PantallaCobrar({ columns, productoEnLista, onSearch, productosID, setPr
       responseType: 'blob'
     }
 
-    axios.post('http://localhost:4000/cobrar', cuerpo, config)
+    axios.post(`http://${config.nombre}/cobrar`, cuerpo, configurar)
       .then((res) => {
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
