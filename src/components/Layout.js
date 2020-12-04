@@ -37,13 +37,13 @@ export default function LayoutBasic(props) {
                     <>
                         <Menu.Item key="/cajero/administrador" icon={<IdcardOutlined />}>
                             <Link to={"/cajero/administrador"}>
-                                Administrador 
+                                Panel de usuarios 
                                 </Link>
                         </Menu.Item>
 
                         <Menu.Item key="/cajero/admin-editar" icon={<UnorderedListOutlined />}>
                             <Link to={"/cajero/admin-editar"}>
-                                Todos los productos
+                                Edicion de productos
                                 </Link>
                         </Menu.Item>
 
@@ -55,7 +55,7 @@ export default function LayoutBasic(props) {
 
                         <Menu.Item key="/cajero/admin-registrar" icon={<UserAddOutlined />}>
                             <Link to={"/cajero/admin-registrar"}>
-                                Registrar
+                                Panel de registro
                                 </Link>
                         </Menu.Item>
                     </>

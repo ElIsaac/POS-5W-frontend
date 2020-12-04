@@ -52,7 +52,7 @@ export const Registrate = (props) => {
 
     return (
         <>
-        < Titulo titulo="Inicio Admin" history={props.history}/>
+        < Titulo titulo="Panel de registro" history={props.history}/>
         <br/>
         
             <form onSubmit={ handleSubmit }>

@@ -95,7 +95,7 @@ export const Productos = (props) => {
 
     return (
         <div>
-            <Titulo titulo="Lista de productos" history={props.history} />
+            <Titulo titulo="Edicion de productos" history={props.history} />
             <br />
             <form>
                 <div className="form-group">
