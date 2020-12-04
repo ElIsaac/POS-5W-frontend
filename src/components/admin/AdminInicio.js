@@ -32,7 +32,7 @@ export const AdminInicio = (props) => {
 
     return (
         <>
-            < Titulo titulo="Inicio Admin" history={props.history} />
+            < Titulo titulo="Panel de Usuarios" history={props.history} />
             {
                 usuarios.cargando
                     ?
@@ -52,6 +52,18 @@ export const AdminInicio = (props) => {
 function CardUsuario({usuarios, cambio, setCambio}) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const token=obtenerToken()
+
+
+    const [formValues, handleInputChange, setValues] = useForm({
+
+            nombre: usuarios.nombre,
+            apellidos: usuarios.apellidos,
+            email: usuarios.email,
+            admin: usuarios.admin,
+            contrasenia: "", 
+            confirmaContrasenia:""
+        });
+    const {nombre, apellidos, email, admin, contrasenia, confirmaContrasenia}=formValues
 
     const eliminar = async(id) => {
         try {
@@ -84,14 +96,20 @@ function CardUsuario({usuarios, cambio, setCambio}) {
                 notification["success"]({
                     message: result.mensaje
                 })
+                setValues({
+                    nombre: usuarios.nombre,
+                    apellidos: usuarios.apellidos,
+                    email: usuarios.email,
+                    admin: usuarios.admin,
+                    contrasenia: "", 
+                    confirmaContrasenia:""
+                })
                 setIsModalVisible(false);
                 setCambio(!cambio)
             }else{
                 notification["error"]({
                     message: result.error
                 })
-                setIsModalVisible(false);
-                setCambio(!cambio)
             }
         } catch (error) {
             notification["error"]({
@@ -101,17 +119,18 @@ function CardUsuario({usuarios, cambio, setCambio}) {
     };
 
     const handleCancel = () => {
+        setValues({
+            nombre: usuarios.nombre,
+            apellidos: usuarios.apellidos,
+            email: usuarios.email,
+            admin: usuarios.admin,
+            contrasenia: "", 
+            confirmaContrasenia:""
+        })
         setIsModalVisible(false);
     };
 
-    const [formValues, handleInputChange, setValues] = useForm({
-
-        nombre: usuarios.nombre,
-        apellidos: usuarios.apellidos,
-        email: usuarios.email,
-        admin: usuarios.admin
-    });
-    const {nombre, apellidos, email, admin}=formValues
+    
 
     return (
         <>
@@ -160,13 +179,42 @@ function CardUsuario({usuarios, cambio, setCambio}) {
                                 value={email}
                                 onChange={handleInputChange}
                             />
+                            
+                        </div>
+                        <div className="forn-group">
+                        <label htmlFor="admin">Administrador</label>
+                        <br/>
+                            <Switch id="admin" checked={admin}  onChange={e=>setValues({...formValues,admin:e})}/>
+                        </div>
+                        <br/>
+                        <div className="alert alert-warning" role="alert">
+                            Precaucion! si no desea cambiar la contraseña deje los campos vacios
+                        </div>
+                        <div className="form-group ">
+                            <label htmlFor="contrasenia">Contraseña</label>
+                            <input
+                                type="password"
+                                className="form-control "
+                                id="contrasenia"
+                                name="contrasenia"
+                                value={contrasenia}
+                                onChange={handleInputChange}
+                            />
+                            <label htmlFor="confirmaContrasenia">Confirma contraseña</label>
+                            <input
+                                type="password"
+                                className="form-control "
+                                id="confirmaContrasenia"
+                                name="confirmaContrasenia"
+                                value={confirmaContrasenia}
+                                onChange={handleInputChange}
+                            />
+                            
+                            
                         </div>
 
                         
-                        <div className="forn-group">
-                            <Switch checked={admin}  onChange={e=>setValues({...formValues,admin:e})}/>
-                            
-                        </div>
+                        
 
                     </form>
                     
