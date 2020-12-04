@@ -142,7 +142,7 @@ function CardUsuario({usuarios, cambio, setCambio}) {
                                 type="text"
                                 className="form-control"
                                 id="apellidos"
-                                name="nomapellidosbre"
+                                name="apellidos"
                                 value={apellidos}
                                 onChange={handleInputChange}
                             />
