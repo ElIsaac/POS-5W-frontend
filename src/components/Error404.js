@@ -7,8 +7,8 @@ export const Error404 = () => {
         <Result
     status="404"
     title="404"
-    subTitle="Sorry, the page you visited does not exist."
-    extra={<Button type="primary"><Link></Link> </Button>}
+    subTitle="La pagina a la que intenta acceder no existe"
+    extra={<Link to="/"><Button type="primary">Volver al Inicio</Button></Link> }
   />
     )
 }
