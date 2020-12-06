@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ElIsaac.github.io/POS-5W-frontend/static/css/main.0727c38c.chunk.css",
+    "main.js": "/ElIsaac.github.io/POS-5W-frontend/static/js/main.f470154a.chunk.js",
+    "main.js.map": "/ElIsaac.github.io/POS-5W-frontend/static/js/main.f470154a.chunk.js.map",
+    "runtime-main.js": "/ElIsaac.github.io/POS-5W-frontend/static/js/runtime-main.d94d72a4.js",
+    "runtime-main.js.map": "/ElIsaac.github.io/POS-5W-frontend/static/js/runtime-main.d94d72a4.js.map",
+    "static/css/2.dfa11a0e.chunk.css": "/ElIsaac.github.io/POS-5W-frontend/static/css/2.dfa11a0e.chunk.css",
+    "static/js/2.3809c922.chunk.js": "/ElIsaac.github.io/POS-5W-frontend/static/js/2.3809c922.chunk.js",
+    "static/js/2.3809c922.chunk.js.map": "/ElIsaac.github.io/POS-5W-frontend/static/js/2.3809c922.chunk.js.map",
+    "index.html": "/ElIsaac.github.io/POS-5W-frontend/index.html",
+    "static/css/2.dfa11a0e.chunk.css.map": "/ElIsaac.github.io/POS-5W-frontend/static/css/2.dfa11a0e.chunk.css.map",
+    "static/css/main.0727c38c.chunk.css.map": "/ElIsaac.github.io/POS-5W-frontend/static/css/main.0727c38c.chunk.css.map",
+    "static/js/2.3809c922.chunk.js.LICENSE.txt": "/ElIsaac.github.io/POS-5W-frontend/static/js/2.3809c922.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d94d72a4.js",
+    "static/css/2.dfa11a0e.chunk.css",
+    "static/js/2.3809c922.chunk.js",
+    "static/css/main.0727c38c.chunk.css",
+    "static/js/main.f470154a.chunk.js"
+  ]
+}
