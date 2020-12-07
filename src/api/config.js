@@ -1,5 +1,5 @@
 const config={
-    nombre: "pos-5w.herokuapp.com"
+    nombre: "localhost:4000"
 };
 
 export default config;
