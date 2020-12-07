@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/POS-5W-frontend/static/css/main.0727c38c.chunk.css",
-    "main.js": "/POS-5W-frontend/static/js/main.003c2df8.chunk.js",
-    "main.js.map": "/POS-5W-frontend/static/js/main.003c2df8.chunk.js.map",
-    "runtime-main.js": "/POS-5W-frontend/static/js/runtime-main.8571ca07.js",
-    "runtime-main.js.map": "/POS-5W-frontend/static/js/runtime-main.8571ca07.js.map",
-    "static/css/2.dfa11a0e.chunk.css": "/POS-5W-frontend/static/css/2.dfa11a0e.chunk.css",
-    "static/js/2.2d68df4a.chunk.js": "/POS-5W-frontend/static/js/2.2d68df4a.chunk.js",
-    "static/js/2.2d68df4a.chunk.js.map": "/POS-5W-frontend/static/js/2.2d68df4a.chunk.js.map",
-    "index.html": "/POS-5W-frontend/index.html",
-    "static/css/2.dfa11a0e.chunk.css.map": "/POS-5W-frontend/static/css/2.dfa11a0e.chunk.css.map",
-    "static/css/main.0727c38c.chunk.css.map": "/POS-5W-frontend/static/css/main.0727c38c.chunk.css.map",
-    "static/js/2.2d68df4a.chunk.js.LICENSE.txt": "/POS-5W-frontend/static/js/2.2d68df4a.chunk.js.LICENSE.txt"
+    "main.css": "/rubensepulveda.xyz/static/css/main.0727c38c.chunk.css",
+    "main.js": "/rubensepulveda.xyz/static/js/main.003c2df8.chunk.js",
+    "main.js.map": "/rubensepulveda.xyz/static/js/main.003c2df8.chunk.js.map",
+    "runtime-main.js": "/rubensepulveda.xyz/static/js/runtime-main.b9efe658.js",
+    "runtime-main.js.map": "/rubensepulveda.xyz/static/js/runtime-main.b9efe658.js.map",
+    "static/css/2.dfa11a0e.chunk.css": "/rubensepulveda.xyz/static/css/2.dfa11a0e.chunk.css",
+    "static/js/2.63085a8f.chunk.js": "/rubensepulveda.xyz/static/js/2.63085a8f.chunk.js",
+    "static/js/2.63085a8f.chunk.js.map": "/rubensepulveda.xyz/static/js/2.63085a8f.chunk.js.map",
+    "index.html": "/rubensepulveda.xyz/index.html",
+    "static/css/2.dfa11a0e.chunk.css.map": "/rubensepulveda.xyz/static/css/2.dfa11a0e.chunk.css.map",
+    "static/css/main.0727c38c.chunk.css.map": "/rubensepulveda.xyz/static/css/main.0727c38c.chunk.css.map",
+    "static/js/2.63085a8f.chunk.js.LICENSE.txt": "/rubensepulveda.xyz/static/js/2.63085a8f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8571ca07.js",
+    "static/js/runtime-main.b9efe658.js",
     "static/css/2.dfa11a0e.chunk.css",
-    "static/js/2.2d68df4a.chunk.js",
+    "static/js/2.63085a8f.chunk.js",
     "static/css/main.0727c38c.chunk.css",
     "static/js/main.003c2df8.chunk.js"
   ]
