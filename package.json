@@ -21,7 +21,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy":"npm run build && echo 'rubensepulveda.xyz' > /build/CNAME",
+    "predeploy":"npm run build && echo rubensepulveda.xyz > ./build/CNAME",
     "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
