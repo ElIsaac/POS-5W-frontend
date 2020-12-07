@@ -2,7 +2,7 @@
   "name": "tiendita-fea",
   "version": "0.1.0",
   "private": true,
-  "homepage": "ElIsaac.github.io/POS-5W-frontend",
+  "homepage": "https://ElIsaac.github.io/POS-5W-frontend",
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
     "@testing-library/jest-dom": "^5.11.4",
@@ -21,7 +21,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy":"npm run build",
+    "predeploy":"npm run build && echo 'rubensepulveda.xyz' > /build/CNAME",
     "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
