@@ -46,6 +46,9 @@ export const CajeroInicio = (props) => {
         setTimeout(() => {
             setTraerImagen(true)
         }, 500)
+        return ()=>{
+            setTraerImagen(false)
+        }
     }, [cambio])
 
     const fileSelectedHandler = event => {

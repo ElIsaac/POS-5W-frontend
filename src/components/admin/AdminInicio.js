@@ -98,16 +98,8 @@ function CardUsuario({ usuarios, cambio, setCambio }) {
                 notification["success"]({
                     message: result.mensaje
                 })
+                setIsModalVisible(false)
                 setCambio(!cambio)
-                setValues({
-                    nombre: usuarios.nombre,
-                    apellidos: usuarios.apellidos,
-                    email: usuarios.email,
-                    admin: usuarios.admin,
-                    contrasenia: "",
-                    confirmaContrasenia: ""
-                })
-                setIsModalVisible(false);
                 
             } else {
                 notification["error"]({
