@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout, Menu } from 'antd';
-import { HomeOutlined, UserOutlined, ShopOutlined } from '@ant-design/icons';
+import { HomeOutlined, UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 
@@ -13,17 +13,16 @@ export default function LayoutBasic(props) {
 
             <div className="">
                 <Header className="site-layout-background" style={{ padding: 0 }} >
-                    
                     <Menu  mode="horizontal">
                         
-                        <ShopOutlined style={{ fontSize: '2.5rem', color: '#08c', padding: '0.2rem 4.5rem 0.2rem 3rem' }} />
+                        
 
-                        <Menu.Item key="mail" icon={<HomeOutlined />}>
+                        <Menu.Item key="mail" icon={<HomeOutlined style={{ fontSize: '2.5rem', color: '#08c'}} /> }  >
                             <Link to="/">
                                 Inicio
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="app" icon={<UserOutlined />}>
+                        <Menu.Item key="app" icon={<UserOutlined style={{ fontSize: '2.5rem', color: '#08c' }} />}>
                             <Link to="/inicia-sesion">
                                 Inicia sesion
                             </Link>

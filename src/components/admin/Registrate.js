@@ -58,33 +58,35 @@ export const Registrate = (props) => {
             <form onSubmit={ handleSubmit }>
             <div className="card">
                 <div className="card-header">
-                <h5 className="card-title">Registrate</h5>
+                <h5 className="display-4">Nuevo Usuario</h5>
                 </div>
                 <div className="card-body">
                     
                         <div className="form-group">
+                            <label>Nombre del usuario</label>
+                            
                         <input 
                             type="text"
                             name="nombre"
                             className="form-control"
-                            placeholder="Tu nombre"
+                            placeholder="Nombre"
                             autoComplete="off"
                             value={ nombre }
                             onChange={ handleInputChange }
                         />
-                    </div>
-                    <div className="form-group">
+                        <br/>
+                        <label>Apellidos del usuario</label>
                         <input 
                             type="text"
                             name="apellidos"
                             className="form-control"
-                            placeholder="Tu(s) apellido(s)"
+                            placeholder="Apellido(s)"
                             autoComplete="off"
                             value={ apellidos }
                             onChange={ handleInputChange }
                         />
-                    </div>
-                    <div className="form-group">
+                        <br/>
+                        <label>E-mail del usuario</label>
                         <input 
                             type="email"
                             name="email"
@@ -94,8 +96,8 @@ export const Registrate = (props) => {
                             value={ email }
                             onChange={ handleInputChange }
                         />
-                    </div>
-                    <div className="form-group">
+                        <br/>
+                        <label>Contraseña</label>
                         <input 
                             type="password"
                             name="contrasenia"
@@ -104,8 +106,9 @@ export const Registrate = (props) => {
                             value={ contrasenia }
                             onChange={ handleInputChange }
                         />
-                    </div>
-                    <div className="form-group">
+                        
+                        <br/>
+                        <label>Confirme Contraseña</label>
                         <input 
                             type="password"
                             name="confirmaContrasenia"

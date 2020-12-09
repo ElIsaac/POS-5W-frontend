@@ -20,23 +20,26 @@ export default function Titulo({titulo, subtitulo, history}) {
     
 
     return (
+        <>
         <PageHeader
                     ghost={false}
-                    title={titulo}
+                    title={<h1>{titulo}</h1>}
                     subTitle={subtitulo}
                     extra={[
                         <Button
+                        style={{width:"100%", height:"75%", fontSize:"120%"}}
                             key="1"
                             type="primary"
                             danger
                             onClick={() => cerrarSesion()}
-                            icon={<PoweroffOutlined />}
+                            icon={<PoweroffOutlined  style={{fontSize:"200%"}}/>}
                         >
                             Cerrar sesion
                         </Button>,
                     ]}
                 >
-
                 </PageHeader>
+                <br/>
+        </>
     )
 }

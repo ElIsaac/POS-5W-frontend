@@ -42,7 +42,7 @@ export const NuevoProducto = (props) => {
             <form onSubmit={handleSubmit}>
                 <div className="card">
                     <div className="card-header">
-                        <h5 className="card-title">Agregar</h5>
+                        <h5 className="display-4">Agregar productos</h5>
                     </div>
                     <div className="card-body">
 

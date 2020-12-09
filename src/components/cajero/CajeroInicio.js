@@ -19,7 +19,6 @@ export const CajeroInicio = (props) => {
         ticket: null,
         cargando: true,
     })
-    const [cambio, setCambio] = useState(false)
     const [imagen, setImagen] = useState(null)
     const [traerImagen, setTraerImagen] = useState(false)
 
@@ -29,6 +28,11 @@ export const CajeroInicio = (props) => {
         traerMisTickets(token, user.id).then(res => {
             setDatos({ cargando: false, ticket: res })
         })
+        
+    }, [user.id])
+
+    //Recargar la imagen cuando haya un cambio
+    useEffect(()=>{
         hayImagen(user.id).then(res => {
             if (res.error) {
                 setTraerImagen(false)
@@ -39,17 +43,6 @@ export const CajeroInicio = (props) => {
             setTraerImagen(false)
         })
     }, [user.id])
-
-    //Recargar la imagen cuando haya un cambio
-    useEffect(() => {
-        setTraerImagen(false)
-        setTimeout(() => {
-            setTraerImagen(true)
-        }, 500)
-        return ()=>{
-            setTraerImagen(false)
-        }
-    }, [cambio])
 
     const fileSelectedHandler = event => {
         setImagen(
@@ -65,7 +58,7 @@ export const CajeroInicio = (props) => {
                 notification["success"]({
                     message: "Imagen guardada"
                 })
-                setCambio(!cambio)
+                props.history.replace("/cajero/inicio")
             }else{
                 notification["error"]({
                     message: "Error de coneccion"

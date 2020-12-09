@@ -97,8 +97,8 @@ export const Productos = (props) => {
         <div>
             <Titulo titulo="Edicion de productos" history={props.history} />
             <br />
-            <form>
-                <div className="form-group">
+            <form className="card">
+                <div className="card-body">
                     <label htmlFor="id">ID</label>
                     <input
                         type="text"
@@ -109,7 +109,9 @@ export const Productos = (props) => {
                         onChange={handleInputChange}
                         placeholder="ID" />
                 </div>
+                <div className="card-footer">
                 <button type="button" onClick={() => buscar(id)} className="btn btn-primary btn-lg">buscar</button>
+                </div>
             </form>
             <br/>
 

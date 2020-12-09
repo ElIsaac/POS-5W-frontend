@@ -1,24 +1,99 @@
 import React from 'react'
-import { IniciaSesion } from '../usuario/IniciaSesion'
-
+import { QuestionCircleFilled, CheckOutlined, SearchOutlined, DollarCircleFilled, UserOutlined } from '@ant-design/icons'
+import './presentacion.css'
 export default function Presentacion() {
 
     return (
         <div>
 
-            <div className="alert alert-success" role="alert">
-                <h4 className="alert-heading">Well done!</h4>
-                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-                <hr />
-                <p className="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-            </div>
+            <div>
 
-            
-            <div className="card text-white bg-dark mb-3" >
-                <div className="card-header"><h1 className="text-white">Inicia sesion</h1></div>
-                <div className="card-body">
-                <IniciaSesion />
-                </div>
+                <div className="container marketing">
+
+                    {/* START THE FEATURETTES */}
+                    <div className="row featurette">
+                        <div className="col-md-7">
+                            <h2 className="featurette-heading">¿Quienes somos? <span className="text-muted">Al chile no sabemos</span></h2>
+                            <p className="lead">ah se crean, somos una compañia dedicada a hacer la vida de quienes atienden un punto de ventas mas facil</p>
+                        </div>
+                        <div className="col-md-5">
+                            <QuestionCircleFilled style={{ fontSize: "1500%" }} />
+                        </div>
+                    </div>
+                    <hr className="featurette-divider" />
+                    <div className="row featurette">
+                        <div className="col-md-7 order-md-2">
+                            <h2 className="featurette-heading">¿Nuestra applicacion es la indicada para usted? <span className="text-muted">Pruebela</span></h2>
+                            <p className="lead">Nuestra aplicacion es capaz de trabajar desde dispositivos moviles hasta computadoras de bajos recuros y no necesita hacer inversiones en equipo para poder ofrecer sus servicio de manera moderna</p>
+                        </div>
+                        <div className="col-md-5 order-md-1">
+                            <CheckOutlined style={{ fontSize: "1500%" }} />
+                        </div>
+                    </div>
+                    <hr className="featurette-divider" />
+                    <div className="row featurette">
+                        <div className="col-md-7">
+                            <h2 className="featurette-heading">¿Cuanto cuesta? <span className="text-muted">Hablemos de precios</span></h2>
+                            <p className="lead">No se preocupe por costos muy eleveados. nuestra tarifa es de 50 mxn. al mes <mark >Un tercio del precio de netflix</mark></p>
+                        </div>
+                        <div className="col-md-5">
+                            <DollarCircleFilled style={{ fontSize: "1500%" }} />
+                        </div>
+                    </div>
+
+                    <hr className="featurette-divider" />
+                    <div className="row featurette">
+                        <div className="col-md-7 order-md-2">
+                            <h2 className="featurette-heading">¿Busca pagar servicio tecnicos caros? <span className="text-muted">Ya no mas</span></h2>
+                            <p className="lead">Con el costo de su suscripcion mensual lo podemos ayudar con problemas del software y hasta de hardware!</p>
+                        </div>
+                        <div className="col-md-5 order-md-1">
+                            <SearchOutlined style={{ fontSize: "1500%" }} />
+                        </div>
+                    </div>
+
+                    <hr className="featurette-divider" />
+                    {/* /END THE FEATURETTES */}
+
+                </div>{/* /.container */}
+                <div className="row">
+                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+
+                        <h2 className="lead"> Equipo no. #2</h2>
+                        <p className="lead" >Integrantes:</p>
+
+                    </div>{/* /.col-lg-4 */}
+                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+
+                        <h2 className="lead"><UserOutlined />Isaac</h2>
+                        <p className="lead">Ramirez Velez</p>
+
+                    </div>{/* /.col-lg-4 */}
+                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+
+                        <h2 className="lead"><UserOutlined />Esteban</h2>
+                        <p className="lead">Eduardo Moncloa Sifuentes</p>
+
+                    </div>{/* /.col-lg-4 */}
+                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+
+                        <h2 className="lead"><UserOutlined />Lucero</h2>
+                        <p className="lead"> Rubi Balderas Herrera</p>
+
+                    </div>{/* /.col-lg-4 */}
+                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+
+                        <h2 className="lead"><UserOutlined />Angel</h2>
+                        <p className="lead">Issac Flores Orozco</p>
+
+                    </div>{/* /.col-lg-4 */}
+                    <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+
+                        <h2 className="lead"><UserOutlined />Christian</h2>
+                        <p className="lead">Ricardo Dominguez Esparza</p>
+
+                    </div>{/* /.col-lg-4 */}
+                </div>{/* /.row */}
             </div>
 
 
