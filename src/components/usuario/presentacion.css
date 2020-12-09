@@ -1,11 +1,19 @@
-.featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+.espaciado-divider {
+    margin: 5rem 0; 
   }
-  
-  /* Thin out the marketing headings */
-  .featurette-heading {
+  .espaciado-heading {
     font-weight: 300;
     line-height: 1;
-    /* rtl:remove */
     letter-spacing: -.05rem;
+  }
+  .titulos .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .titulos h2 {
+    font-weight: 400;
+  }
+  .titulos .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
   }
