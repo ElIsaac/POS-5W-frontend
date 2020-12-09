@@ -40,11 +40,13 @@ export const AdminInicio = (props) => {
                     ?
                     <PantallaDeCarga />
                     :
-                    <div className="row container">
+                    <div className="container" >
+                        <div className="row ">
                         {
 
                             usuarios.datos.map(i => <CardUsuario cambio={cambio} setCambio={setCambio} key={i._id} usuarios={i} />)
                         }
+                    </div>
                     </div>
             }
         </>
@@ -217,7 +219,7 @@ function CardUsuario({ usuarios, cambio, setCambio }) {
                 </>
             </Modal>
             <div className="">
-            <div className="card col-xs-6 col-sm-6 col-md-4 col-lg-3" style={{ maxWidth: '20rem' }}>
+            <div className="card col-xs-6 col-sm-6 col-md-4 col-xl-3" style={{ maxWidth: '14rem' }}>
                 {
                     usuarios.avatar
                         ?

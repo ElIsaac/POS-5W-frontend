@@ -147,10 +147,12 @@ export const CajeroInicio = (props) => {
 
                             </div>
 
-                            <div className="row container">
+                            <div className="container">
+                            <div className="row">
                                 {
                                     datos.ticket.map(i => <TicketItem key={i._id} i={i} />)
                                 }
+                            </div>
                             </div>
                         </>
 
@@ -184,7 +186,7 @@ function TicketItem({ i }) {
     return (
 
         <>
-            <div className="card">
+            <div className="card col-xs-6 col-sm-6 col-md-4 col-xl-3">
                 <div className="card-body">
                     <h5 className="card-title">{i.fecha}</h5>
                     <h6 className="card-subtitle mb-2 text-muted"><mark>ID:</mark> {i._id}</h6>
