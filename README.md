@@ -1,9 +1,5 @@
 # Point of sales 5w
 ### `Isaac Ramirez Velez`
-### `esteban moncloa`
-### `rubi balderas`
-### `angel flores`
-### `christian dominguez`
 
 ## Descripcion
 Un sistema de registro de ventas para pequeñas tiendas y locales la cual puede ser local u online
